@@ -1,16 +1,18 @@
 import React, { useState } from 'react'
 
-export const Formu = ({users, setUsers, setSearch}) => {
+export const Formu = ({ setUsers, setSearch}) => {
   const [inputText, setInputText] = useState('')
   console.log(inputText)
   const handleClick = () => {
     const newUser = { id: Math.random().toString(36).substring(2), name: inputText}
     setUsers(users => [...users, newUser]);
     setInputText('');
+    setSearch('');
   }
 
   const handleSearch = () => {
     setSearch(inputText);
+    setInputText('');
   }
   return (
     <>

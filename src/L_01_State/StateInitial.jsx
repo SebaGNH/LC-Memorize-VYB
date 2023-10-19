@@ -21,7 +21,6 @@ export const StateInitial = () => {
       <ButtonBack />
 
       <Formu
-        users={users}
         setUsers={setUsers}
         setSearch={setSearch}
       />

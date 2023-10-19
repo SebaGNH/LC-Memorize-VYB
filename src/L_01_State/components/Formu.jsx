@@ -1,20 +1,24 @@
 import React, { useState } from 'react'
 
-export const Formu = ({setUsers}) => {
-  const [textInput, setTextInput] = useState('');
-
+export const Formu = ({users, setUsers, setSearch}) => {
+  const [inputText, setInputText] = useState('')
+  console.log(inputText)
   const handleClick = () => {
-    const newUser = { id: Math.random().toString(36).substring(2), name: textInput}
+    const newUser = { id: Math.random().toString(36).substring(2), name: inputText}
     setUsers(users => [...users, newUser]);
-    setTextInput('');
+    setInputText('');
+  }
+
+  const handleSearch = () => {
+    setSearch(inputText);
   }
   return (
     <>
       <input
         className='form-control'
-        onChange={(e) => setTextInput(e.target.value)}
+        onChange={(e) => setInputText(e.target.value)}
         type="text"
-        value={textInput}
+        value={inputText}
         placeholder='Nuevo Usuario'
         />
 
@@ -22,6 +26,12 @@ export const Formu = ({setUsers}) => {
         className='btn btn-primary my-3'
         onClick={handleClick}
       >Aceptar
+      </button>
+
+      <button
+        className='btn btn-primary m-3'
+        onClick={handleSearch}
+      >Buscar
       </button>
     </>
   )

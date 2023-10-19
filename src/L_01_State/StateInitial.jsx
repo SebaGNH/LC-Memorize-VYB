@@ -11,15 +11,23 @@ const InitialUsers = [
 
 export const StateInitial = () => {
   const [users, setUsers] = useState(InitialUsers);
+  const [search, setSearch] = useState('');
+
+  const usersFiltered = users.filter( user =>
+    user.name.toLowerCase().includes(search.toLowerCase()));
 
   return (
     <>
       <ButtonBack />
 
-      <Formu setUsers={setUsers}/>
+      <Formu
+        users={users}
+        setUsers={setUsers}
+        setSearch={setSearch}
+      />
 
 
-      <List users={users}/>
+      <List users={usersFiltered}/>
     </>
   )
 }

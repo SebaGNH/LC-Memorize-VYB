@@ -14,6 +14,10 @@ export const Formu = ({ setUsers, setSearch}) => {
     setSearch(inputText);
     setInputText('');
   }
+
+  const handleClean = () => {
+    setSearch('')
+  }
   return (
     <>
       <input
@@ -34,6 +38,12 @@ export const Formu = ({ setUsers, setSearch}) => {
         className='btn btn-primary m-3'
         onClick={handleSearch}
       >Buscar
+      </button>
+
+      <button
+        className='btn btn-primary m-3'
+        onClick={handleClean}
+      >Limpiar
       </button>
     </>
   )

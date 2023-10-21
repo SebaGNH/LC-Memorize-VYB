@@ -14,7 +14,8 @@ export const StateInitial = () => {
   const [search, setSearch] = useState('');
 
   const usersFiltered = users.filter( user =>
-    user.name.toLowerCase().includes(search.toLowerCase()));
+    user.name.toLowerCase().includes(search.toLowerCase())
+  );
 
   return (
     <>

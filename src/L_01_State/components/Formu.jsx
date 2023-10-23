@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 export const Formu = ({ setUsers, setSearch}) => {
   const [inputText, setInputText] = useState('')
-  console.log(inputText)
+  // console.log(inputText)
   const handleClick = () => {
     const newUser = { id: Math.random().toString(36).substring(2), name: inputText}
     setUsers(users => [...users, newUser]);
@@ -41,7 +41,7 @@ export const Formu = ({ setUsers, setSearch}) => {
       </button>
 
       <button
-        className='btn btn-primary m-3'
+        className='btn btn-primary ml-3'
         onClick={handleClean}
       >Limpiar
       </button>

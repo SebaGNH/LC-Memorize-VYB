@@ -18,6 +18,7 @@ export const Formu = ({ setUsers, setSearch}) => {
   const handleClean = () => {
     setSearch('')
   }
+
   return (
     <>
       <input
@@ -41,9 +42,14 @@ export const Formu = ({ setUsers, setSearch}) => {
       </button>
 
       <button
-        className='btn btn-primary ml-3'
+        className='btn btn-primary m-3'
         onClick={handleClean}
       >Limpiar
+      </button>
+      <button
+        className='btn btn-primary ml-3'
+        onClick={()=> handleDelete()}
+      >Borrar
       </button>
     </>
   )

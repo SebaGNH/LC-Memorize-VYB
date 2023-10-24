@@ -27,6 +27,10 @@ export const StateInitial = () => {
       }
     ),[users, search]);
 
+    const handleDelete = (idDeleted)=> {
+      setUsers(users => users.filter( user => user.id !== idDeleted))
+    }
+
   return (
     <>
       <ButtonBack />
@@ -37,7 +41,7 @@ export const StateInitial = () => {
       />
 
 
-      <List users={usersFiltered}/>
+      <List users={usersFiltered} handleDelete={handleDelete}/>
     </>
   )
 }

@@ -1,5 +1,6 @@
+import { memo } from "react"
 
-export const List = ({ users, handleDelete }) => {
+export const List = memo(({ users, handleDelete }) => {
   return (
     <ul className='mt-5'>
     {
@@ -15,5 +16,5 @@ export const List = ({ users, handleDelete }) => {
     }
   </ul>
   )
-}
+})
 

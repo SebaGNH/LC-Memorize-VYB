@@ -22,7 +22,7 @@ export const Formu = ({ setUsers, setSearch}) => {
   return (
     <>
       <input
-        className='form-control'
+        className='form-control mt-4'
         onChange={(e) => setInputText(e.target.value)}
         type="text"
         value={inputText}
@@ -30,26 +30,21 @@ export const Formu = ({ setUsers, setSearch}) => {
         />
 
       <button
-        className='btn btn-primary my-3'
+        className='btn btn-primary'
         onClick={handleClick}
       >Aceptar
       </button>
 
       <button
-        className='btn btn-primary m-3'
+        className='btn btn-primary m-4'
         onClick={handleSearch}
       >Buscar
       </button>
 
       <button
-        className='btn btn-primary m-3'
+        className='btn btn-primary'
         onClick={handleClean}
       >Limpiar
-      </button>
-      <button
-        className='btn btn-primary ml-3'
-        onClick={()=> handleDelete()}
-      >Borrar
       </button>
     </>
   )
